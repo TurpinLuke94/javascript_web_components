@@ -1,0 +1,68 @@
+/***
+// CSS TABLE OF CONTENTS
+//
+// 1.0 - Alert (div)
+// 2.0 - Animation to display & hide alert (keyframes)
+// 3.0 - Header (div)
+// 4.0 - Heading (h5)
+// 5.0 - Text (p)
+// 6.0 - Close (button)
+***/
+
+/* 1.0 - Alert (div) */
+:host > .alert {
+    animation-direction: alternate;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 2;
+    animation-name: display-alert;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+/* 2.0 - Animation to display & hide alert (keyframes) */
+@keyframes display-alert {
+    0% {
+        border: 0;
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+    }
+    75% {
+        border: 1px solid transparent;
+        max-height: 11.75rem;
+        opacity: 0;
+        padding: 1rem 4rem 1rem 1.25rem;
+    }
+    100% {
+        border: 1px solid transparent;
+        max-height: 11.75rem;
+        opacity: 1;
+        padding: 1rem 4rem 1rem 1.25rem;
+    }
+}
+
+/* 3.0 - Header (div) */
+.alert-header {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* 4.0 - Heading (h5) */
+.alert-heading {
+    flex: 1 0 auto;
+    margin: 0;
+    padding-right: 1rem;
+}
+
+/* 5.0 - Text (p) */
+.alert-text {
+    margin: 0;
+}
+
+/* 6.0 - Close (button) */
+.close:focus,
+.close:focus-visible {
+    outline: none;
+}

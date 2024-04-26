@@ -1,0 +1,152 @@
+/***
+// CSS TABLE OF CONTENTS
+//
+// 1.0 - Post
+//      1.1 - Post (:host)
+//      1.2 - Divisions who's parent's class is the host (div)
+//      1.3 - Replying to (div)
+//      1.4 - Posted by (div)
+//      1.5 - Post dates (div)
+//      1.6 - Spans who's parent's class is 'post dates' (span)
+//      1.7 - Post date's errors (span)
+//      1.8 - Content (div)
+//      1.9 - Post buttons division (div)
+//      1.10 - Unrestricted post buttons (button)
+//      1.11 - Restricted post buttons (button)
+// 2.0 - Screen max-width 768px
+//      2.1 - Unrestricted post buttons (button)
+//      2.2 - First 2 unrestricted post buttons (button)
+// 3.0 - Forms
+//      3.1 - Post forms (div)
+//      3.2 - Post forms child elements
+//      3.3 - Content (textarea)
+//      3.4 - Error message (div)
+//      3.5 - Container for buttons (div)
+//      3.6 - Post (input) & Cancel (input) buttons
+***/
+
+/* 1.0 - Post */
+/* 1.1 - Post (:host) */
+:host {
+    border: 1px ridge black;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+/* 1.2 - Divisions who's parent's class is the host (div) */
+:host > div {
+    margin: 0.25rem 0;
+}
+
+/* 1.3 - Replying to (div) */
+.replying-to {
+    flex: 0 0 100%;
+}
+
+/* 1.4 - Posted by (div) */
+.posted-by {
+    flex: 0 0 auto;
+    font-size: xx-large;
+    font-weight: bold;
+    height: 3rem;
+    line-height: 3rem;
+    padding-right: 1rem;
+}
+
+/* 1.5 - Post dates (div) */
+.post-dates {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+/* 1.6 - Spans who's parent's class is 'post dates' (span) */
+.post-dates > span {
+    flex: 0 0 1.5rem;
+    text-align: end;
+}
+
+/* 1.7 - Post date's errors (span) */
+.post-dates .date-error > span {
+    color: red;
+}
+
+/* 1.8 - Content (div) */
+.post-content {
+    flex: 0 1 100%;
+    min-height: 3rem;
+}
+
+/* 1.9 - Post buttons division (div) */
+.post-btns {
+    display: flex;
+    flex: 0 0 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+/* 1.10 - Unrestricted post buttons (button) */
+.unrestricted.post-btns > .btn {
+    flex: 0 0 22.5%;
+}
+
+/* 1.11 - Restricted post buttons (button) */
+.restricted.post-btns > .btn {
+    flex: 0 0 48.25%;
+}
+
+/* 2.0 - Screen max-width 768px */
+@media screen and (max-width: 768px) {
+    /* 2.1 - Unrestricted post buttons (button) */
+    .unrestricted.post-btns > .btn {
+        flex-basis: 48.25%;
+    }
+
+    /* 2.2 - First 2 unrestricted post buttons (button) */
+    .unrestricted.post-btns > .btn:nth-child(-n + 2) {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* 3.0 - Forms */
+/* 3.1 - Post forms (div) */
+.post-form {
+    display: none;
+    flex: 0 0 100%;
+    flex-flow: row wrap;
+}
+
+/* 3.2 - Post forms child elements */
+.post-form > * {
+    flex: 0 0 100%;
+    margin: 0.25rem 0;
+}
+
+/* 3.3 - Content (textarea) */
+.form-content {
+    resize: none;
+}
+
+/* 3.4 - Error message (div) */
+.error-message {
+    color: red;
+    display: none;
+    margin: 0;
+    text-align: center;
+}
+
+/* 3.5 - Container for buttons (div) */
+.form-btns {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+/* 3.6 - Post & Cancel buttons (input) */
+.btn {
+    flex: 0 0 48.25%;
+}
